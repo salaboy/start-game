@@ -4,13 +4,14 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"net/http"
-	"os"
 	"github.com/go-redis/redis"
 	"github.com/google/uuid"
+	"net/http"
+	"os"
 )
 
 var redisHost = os.Getenv("REDIS_HOST")
+var redisPassword = os.Getenv("REDIS_PASSWORD")
 
 type GameSession struct{
 	SessionId string
@@ -22,7 +23,7 @@ func Handle(ctx context.Context, res http.ResponseWriter, req *http.Request) {
 
 	client := redis.NewClient(&redis.Options{
 		Addr:     redisHost + ":6379",
-		Password: "",
+		Password: redisPassword,
 		DB:       0,
 	})
 
