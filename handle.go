@@ -22,7 +22,7 @@ type GameSession struct{
 func Handle(ctx context.Context, res http.ResponseWriter, req *http.Request) {
 
 	client := redis.NewClient(&redis.Options{
-		Addr:     redisHost + ":6379",
+		Addr:     redisHost,
 		Password: redisPassword,
 		DB:       0,
 	})
