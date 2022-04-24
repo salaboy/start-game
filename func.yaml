@@ -6,10 +6,7 @@ registry: ""
 image: docker.io/salaboy/start-game:latest
 imageDigest: sha256:1813b34d8bbf67a5ca3ad583d7458fc641e3ac09d41243aed1aea367c87d8cb8
 build: local
-git:
-  url: null
-  revision: null
-  contextdir: null
+git: {}
 builder: gcr.io/paketo-buildpacks/builder:base
 builders:
   base: gcr.io/paketo-buildpacks/builder:base
@@ -22,7 +19,7 @@ volumes: []
 buildEnvs: []
 envs:
 - name: REDIS_HOST
-  value: 10.200.130.188:6379
+  value: "" # <hostname>:<port>
 - name: REDIS_PASSWORD
   value: ""
 annotations: {}
