@@ -19,7 +19,7 @@ volumes: []
 buildEnvs: []
 envs:
 - name: REDIS_HOST
-  value: ""
+  value: "" # <hostname>:<port>
 - name: REDIS_PASSWORD
   value: ""
 annotations: {}
